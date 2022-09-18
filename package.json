@@ -1,0 +1,32 @@
+{
+  "name": "worker-pool",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "standard --fix | snazzy",
+    "prebuild": "npm run lint",
+    "build": "rollup -c",
+    "prepool": "npm run build",
+    "pool": "node dist/index.esm.js",
+    "pool:cjs": "node dist/index.cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.79.0",
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  }
+}
